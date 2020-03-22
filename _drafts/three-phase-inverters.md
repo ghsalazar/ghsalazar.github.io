@@ -73,52 +73,17 @@ nomenclature. It simplifies the implementation of inverter
 control. Compare this sequence with switching position in the
 preceding figure.
 
-<div class="auto_out">
-  <script type="text/x-sage">
-t = var('t')
-v_o(t) = 1/4*sgn(sin(t))+.25
-
-tt = [k * pi for k in range(0,4)]
-tt_lbl = ['$0$', '$\\pi/\\omega$', '$2\\pi/\\omega$', '$3\\pi/\\omega$']
-
-vt = [k / 2 for k in range(-2, 3)]
-vt_lbl = ['$-V_s$', '$-V_s/2$', '$0$', '$V_s/2$', '$V_s$']
-
-q = [(-1)^k*v_o(t-pi*k/3) for k in [0..5]]
-g = [plot(q[k],(t,0,3*pi), ticks=[tt, vt], tick_formatter = [tt_lbl, vt_lbl], title='Q%d'%(k+1)) for k in [0..5]]
-
-graphics_array(g, ncols=1)
- </script>
-</div>
+![Figure: Waveforms of the outputs of three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/waveforms-three-phase-bridge-inverter-180-plot.svg)
 
 ## Delta connection
 
 In the next figure, We show the waveforms on the load in delta conection.
 
-<div class="auto_out">
-  <script type="text/x-sage">
-t = var('t')
-v_o(t) = 1/4*sgn(sin(t))+.25
+![Figure: Circuit analysis of the loads in delta connection with a three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/delta-analysis.svg)
 
-tt = [k * pi for k in range(0,4)]
-tt_lbl = ['$0$', '$\\pi/\\omega$', '$2\\pi/\\omega$', '$3\\pi/\\omega$']
 
-vt = [k / 2 for k in range(-2, 3)]
-vt_lbl = ['$-V_s$', '$-V_s/2$', '$0$', '$V_s/2$', '$V_s$']
+![Figure: Waveforms of the loads in delta connection with a three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/waveforms-three-phase-bridge-inverter-delta.svg)
 
-q = [(-1)^k*v_o(t-pi*k/3) for k in [0..5]]
-
-Vab = q[0]+q[3]-q[2]-q[5]
-Vbc = q[2]+q[5]-q[1]-q[4]
-Vca = q[1]+q[4]-q[0]-q[3]
-
-p1 = plot(Vab,(t,0,3*pi), ticks=[tt, vt], tick_formatter = [tt_lbl, vt_lbl], title="Vab")
-p2 = plot(Vbc,(t,0,3*pi), ticks=[tt, vt], tick_formatter = [tt_lbl, vt_lbl], title="Vbc")
-p3 = plot(Vca,(t,0,3*pi), ticks=[tt, vt], tick_formatter = [tt_lbl, vt_lbl], title="Vca")
-
-graphics_array([p1,p2,p3], ncols=1)
-</script>
-</div>
 
 ## Wye Connection
 
@@ -131,6 +96,12 @@ wave than just a square wave, but they differ from those in the delta
 connection.
 
 ![Figure: Three-phase full bridge in WYE connection](http://ghsalazar.github.io/electrical-machines-control/images/three-phase-bridge-inverter-wye.svg)
+
+
+![Figure: Circuit analysis of the loads in wye connection with a three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/wye-analysis.svg)
+
+
+![Figure: Waveforms of the loads in delta connection with a three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/waveforms-three-phase-bridge-inverter-wye.svg)
 
 
 ## References
