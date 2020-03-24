@@ -22,9 +22,7 @@ connect to the three-phase load. To connect a three-phase motor to
 this inverter, you must take those 6 cables from the inverter to the
 motor. This involves more expenses than simply taking 3 cables.
 
-
 ![Figure: Three-phase full bridge](http://ghsalazar.github.io/electrical-machines-control/images/three-phase-full-bridge-inverter.svg)
-
 
 An inverter can be connected by means of a transformer to the load,
 which allows reducing the number of cables used in power transmission
@@ -43,7 +41,6 @@ to the inverter, to reduce electrical installation costs, or a
 transformer is put in between, which limits using the inverter only in
 speed control applications. As for the waveforms obtained, they will
 be like a single-phase inverter.
-
 
 # Three-phase bridge inverter
 
