@@ -1,9 +1,7 @@
 ---
 title: Three-phase Inverters
 layout: "post"
-draft_tag:
- - Control of Electrical Machines
- - Inverters
+categories: [Electrical Machines Control, Inverters]
 ---
 
 Three-phase inverters are used in high-power applications, as power

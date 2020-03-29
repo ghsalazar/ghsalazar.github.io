@@ -1,8 +1,8 @@
 ---
 title: Event-driven programming in embedded systems
 layout: post
+categories: [Embedded Systems]
 ---
-
 
 Event-driven programming is a [programming
 paradigm](https://en.wikipedia.org/wiki/Programming_paradigm), where
