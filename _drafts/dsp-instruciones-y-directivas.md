@@ -12,12 +12,14 @@ lang: es
 > programa, no en su ejecución.
 
 En un programa escrito en lenguaje ensamblador se mezclan en realidad dos
-lenguajes diferentes. Uno de esos lenguajes es el que se va a transformar en
-lenguaje de máquina. Ese lenguaje está compuesto por las **instrucciones**
-definidas por la arquitectura del procesador. Una instrucción tiene una relación
-uno a uno con una instrucción en lenguaje de máquina. Las instrucciones tienen
-la función de modificar el estado del programa durante su ejecución. A las
-instrucciones de lenguaje ensamblador también se les conoce como mnemonicos.
+lenguajes diferentes.
+
+Uno de esos lenguajes es el que se va a transformar en lenguaje de máquina. Ese
+lenguaje está compuesto por las **instrucciones** definidas por la arquitectura
+del procesador. Una instrucción tiene una relación uno a uno con una instrucción
+en lenguaje de máquina. Las instrucciones tienen la función de modificar el
+estado del programa durante su ejecución. A las instrucciones de lenguaje
+ensamblador también se les conoce como mnemonicos.
 
 El otro lenguaje se compone de **directivas**. Éstas no se van transformar a
 lenguaje de máquina, sino modifican el comportamiento del ensamblador mientras
