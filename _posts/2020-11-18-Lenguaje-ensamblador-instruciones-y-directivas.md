@@ -1,5 +1,5 @@
 ---
-title: Lenguaje ensamblador - instrucciones y directivas
+title: Lenguaje ensamblador - instrucciones, mnemónicos y directivas
 author: Gastón Hugo Salazar Silva
 layout: post
 lang: es
@@ -8,13 +8,15 @@ lang: es
 > **En resumen**
 > 
 > Una **instrucción** de lenguaje de máquina es una operación que se procesa en
-> la ejecución del programa. Están definidas por la arquitectura del procesador.
+> la ejecución del programa. Las instrucciones se definen por la arquitectura
+> del procesador.
 >
 > Un **mnemónico** es un símbolo que representa a una instrucción de lenguaje de
-> máquina. Están definidos por el lenguaje ensamblador.
+> máquina. Los mnemónicos se definen por el lenguaje ensamblador.
 >
 > Una **directiva** es una operación que se procesa en el ensamblado del
-> programa, no en su ejecución. Están definidas por el programa ensamblador.
+> programa, no en su ejecución. Las directivas se definen por el programa
+> ensamblador.
 
 En un programa escrito en lenguaje ensamblador se mezclan en realidad dos
 lenguajes diferentes.
