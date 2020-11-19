@@ -23,12 +23,12 @@ armadura. La primera es la fuente del voltaje de armadura, $V_a$. La segunda
 fuente de voltaje se debe a la fuerza contraelectromotriz del propio motor,
 $E_g$. Es importante notar que solo podemos manipular directamente $V_a$.
 
-Dependiendo como manipulemos $V_a$ con respecto a $E_g$, es posible operar el
+Dependiendo como manipulamos $V_a$ con respecto a $E_g$, es posible operar el
 motor para que produzca par o consuma par.
 
 ![Modo motor](/assets/images/circuito-armadura-modo-motor.png)
 
-En el **modo motor**, tenemos que que el votaje de armadura, $V_a$, debe ser
+En el **modo motor**, tenemos que que el voltaje de armadura, $V_a$, debe ser
 mayor a la fuerza contraelectromotriz, $E_g$. Usando el circuito de la imagen de
 arriba, la corriente en la malla va en el sentido horario. Este es el modo
 normal de operación del motor. En este modo el motor produce par.
@@ -45,8 +45,8 @@ motor.
 
 ![Modo de frenado dinámico](/assets/images/circuito-armadura-frenado-dinamico.png)
 
-Luego tenemos el **modo frenado dinámico**. En este caso se desonecta la
-alimmentación de la armadura y en su lugar se conecta un resistor. La caida de
+Luego tenemos el **modo frenado dinámico**. En este caso se desconecta la
+alimentación de la armadura y en su lugar se conecta un resistor. La caída de
 tensión en la resistencia de frenado es menor que la fuerza contraelectromotriz.
 De nuevo, el sentido de la corriente es en el sentido inverso del modo motor.
 
