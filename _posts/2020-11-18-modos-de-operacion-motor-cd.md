@@ -2,6 +2,7 @@
 title:  Modos de operación de un motor de corriente directa
 author: Gastón Salazar Silva
 layout: post
+date: 2020-11-18
 ...
 
 ----
