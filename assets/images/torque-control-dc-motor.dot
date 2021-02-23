@@ -1,0 +1,10 @@
+digraph G {
+    graph [rankdir=LR]
+    node [shape=box];
+
+    ref [shape=none];
+    sum [shape=circle, label="+"]
+    motor [image="CodeCogsEqn-motor-torque.png"]
+
+    ref -> sum -> PI -> motor;
+}

@@ -1,0 +1,52 @@
+% Written by metapost version 2.00
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmr10";
+_s("+",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-0.8302)--(7.7487,-0.8302)--
+ (7.7487,5.8115)--(0,5.8115)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="cmr7";
+_s("1",_n1,1.00000,14.2375,3.9226,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;_r((1.1955,2.4907)..(31.2507,2.4907), 0.3985,);
+_n2="cmmi7";
+_s("L",_n2,1.00000,1.1955,-3.4355,);
+_n3="cmmi5";
+_s("a",_n3,1.00000,6.6612,-4.4318,);
+_s("s",_n2,1.00000,11.0170,-3.4355,);
+_s("+",_n1,1.00000,14.7772,-3.4355,);
+_s("R",_n2,1.00000,20.8932,-3.4355,);
+_s("a",_n3,1.00000,26.8949,-4.4318,);
+setbounds _p to (0,-4.4318)--(32.4463,-4.4318)--
+ (32.4463,8.4169)--(0,8.4169)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n2="cmmi7";
+_s("K",_n2,1.00000,6.8459,4.0847,);
+_n3="cmmi5";
+_s("t",_n3,1.00000,13.5403,3.0884,);
+interim linecap:=0;
+vardef _r(expr _a,_w)(text _t) =
+  addto _p doublepath _a withpen pencircle scaled _w _t enddef;_r((1.1955,2.4907)..(22.4966,2.4907), 0.3985,);
+_s("J",_n2,1.00000,1.1955,-3.4355,);
+_s("s",_n2,1.00000,6.2612,-3.4355,);
+_n1="cmr7";
+_s("+",_n1,1.00000,10.0215,-3.4355,);
+_s("B",_n2,1.00000,16.1374,-3.4355,);
+setbounds _p to (0,-4.2658)--(23.6921,-4.2658)--
+ (23.6921,8.8501)--(0,8.8501)--cycle;
+_p endgroup
+mpxbreak
