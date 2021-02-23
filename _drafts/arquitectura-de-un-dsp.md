@@ -134,7 +134,8 @@ La estructura de datos que utiliza un filtro de FIR es el arreglo. Tanto los
 coeficientes como las entradas se almacenan en arreglos. Por lo mismo, se busca
 poder acceder a los elementos de estos arreglos lo más rápido posible.
 
-Usualmente un DSP se implementa con la arquitectura Harvard. En esta
+Usualmente un DSP se implementa con la [arquitectura
+Harvard](https://es.wikipedia.org/wiki/Arquitectura_Harvard). En esta
 arquitectura se hace diferencia entre la memoria donde residen las instrucciones
 y la memoria donde se encuentran los datos. Las instrucciones no sólo se
 almacenan en un banco de memoria diferente a los datos, sino que además se
@@ -143,7 +144,9 @@ acceden por buses de direccionamiento y de datos diferentes.
 Es decir, un procesador en esta arquitectura cuenta con dos buses de
 direccionamiento y dos buses de datos, como se puede aprecia en la imagen.
 
-![Arquitectura Harvard (cortesía de Wikipedia)](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Harvard_architecture-es.svg/640px-Harvard_architecture-es.svg.png)
+| ![Arquitectura Harvard (cortesía de Wikipedia)](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Harvard_architecture-es.svg/640px-Harvard_architecture-es.svg.png) |
+|:---:|
+| **Arquitectura Harvard (cortesía de Wikipedia)** |
 
 Se utiliza esta arquitectura en el caso de un DSP, porque permite manejar los
 coeficientes y las entradas en memorias diferentes, lo cual permite una
@@ -157,14 +160,13 @@ diferencias se muestran en la siguiente tabla.
 
 | Característica             | Microprocesador   | Microcontrolador   | DSP                |
 |----------------------------|-------------------|--------------------|--------------------|
-| Operaciones básicas        | $A\leftarrow B$, $A \leq B$     | bit <- 0, bit <- 1 | A*B, A+B           |
+| Operaciones básicas | $A\leftarrow B, A \leq B$ | $bit\leftarrow 0, bit \leftarrow 1$ | $A\times B, A+B$ |
 | Memoria                    | Externa           | Interna            | Externa            |
 | Periféricos                | Externos          | Internos           | Externos           |
 | Consumo de potencia        | Alta              | Baja               | -                  |
 | Velocidad de procesamiento | Alta              | Baja               | Baja               |
 | Arquitectura de memoria    | Von Neuman        | Harvard            | Harvard            |
 | Aplicación                 | Proposito general | Sistemas embebidos | Sistemas embebidos |
-
 
 Éstas características son importantes a la hora de decidir que tipo de
 dispositivo se va a utilizar. La familia de procesadores Arm Cortex tiene
