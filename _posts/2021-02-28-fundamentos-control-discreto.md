@@ -93,9 +93,9 @@ y desventajas de un sistema de control discreto.
 
 | Ventajas | Desventajas |
 |----------|-------------|
-| Flexibilidad para cambiar de estrategia | Pérdida de información debido al muestreo y cuantización |
+| Flexibilidad para cambiar de estrategia | Pérdida de información debido al muestreo |
 |----------|-------------|
-| Flexibilidad para cambiar el controlador | Pérdida de información debido al muestreo y cuantización |
+| Flexibilidad para cambiar el controlador | Pérdida de información debido a la cuantización |
 |----------|-------------|
 | Flexibilidad para ajustar los parámetros del controlador | Introducción de retardo al sistema de control | 
 |----------|-------------|
