@@ -1,14 +1,14 @@
 ---
-title: Transformación bilineal o Transformación de Tustin
-author: Gastón Hugo Salazar Silva
+title: Transformación bilineal o transformación de Tustin
+author: Gastón H. Salazar-Silva
 layout: post
 lang: es
 ...
 
 A continuación obtendremos funciones de transferencia discretas a partir de
 funciones de transferencia continuas por medio de la transformación bilineal y
-aplicaremos la transformación bilineal a funciones de transferencia de primer,
-segundo y tercer orden.
+aplicaremos la transformación bilineal a funciones de transferencia de primer y
+segundo orden.
 
 ## Transformación bilineal
 
@@ -46,7 +46,7 @@ nuestro caso de la siguiente forma
 $$\int_{t}^{t+h} f'(\tau) \mathrm{d}\tau \approx \frac{f'(t) + f'(t+h)}{2} h. \tag{2}$$
 
 Sustituimos el lado derecho de la ecuación (2) en el lado izquierdo de la
-ecuación (2), y obtenemos la siguiente expresión.
+ecuación (1), y obtenemos la siguiente expresión
 
 $$\frac{f'(t) + f'(t+h)}{2} h \approx f(t+h) - f(t). \tag{3}$$
  
@@ -59,34 +59,46 @@ y el resultado que obtenemos es
 
 $$\frac{sF(s) + e^{hs} sF(s)}{2} h \approx e^{hs} F(s) - F(S). \tag{5}$$
 
-$$z = e^{hs}$$
+Para reducir la complejidad  de la simplificación que sigue, proponemos la
+siguiente sustitución
 
-$$\frac{sF(s) + z sF(s)}{2} h \approx z F(s) - F(S)$$
+$$z = e^{hs} \tag{6},$$
 
-$$\frac{h}{2} s (1+z) F(s) \approx (z-1) F(s)$$
+en la ecuación (5), con lo que obtenemos
 
-$$\frac{h}{2} s (1+z) \approx (z-1)$$
+$$\frac{sF(s) + z sF(s)}{2} h \approx z F(s) - F(S). \tag{7}$$
 
-$$s \approx \frac{2}{h} \frac{z-1}{z+1}$$
+Finalmente, despejamos la variable $s$ de la ecuación (7), con lo que obtenemos
+
+$$s \approx \frac{2}{h} \frac{z-1}{z+1}. \tag{8}$$
 
 ## Elección de del periodo de muestreo $h$
 
-El periodo de muestreo, $h$, está dado por la frecuencia de muestreo del sistema
-de control discreto
-$$h = \frac{1}{f_s}$$
-donde $f_s$ es la frecuencia de muestreo del sistema de control discreto.
+El *periodo de muestreo*, $h$, está dado por la siguiente expresión
+
+$$h = \frac{1}{f_s} \tag{9}$$
+
+donde $f_s$ es la *frecuencia de muestreo* del sistema de control discreto.
 
 Para elegir la frecuencia de muestreo, $f_s$, aplicaremos el
 [Teorema de muestreo de
 Nyquist-Shannon](https://es.wikipedia.org/wiki/Teorema_de_muestreo_de_Nyquist-Shannon),
-el cual dice que 
-$$f_s > 2f_B$$
-donde $f_B$ es la frecuencia del ancho de banda en lazo cerrado del sistema de
+el cual dice que
+
+$$f_s > 2 B \tag{10}$$
+
+donde $B$ es la *frecuencia del ancho de banda* en lazo cerrado del sistema de
 control.
 
-Como es dificil conocer de antemano el ancho de banda del sistema de control en
-lazo cerrado, asumiremos que el ancho de banda estará acotado por arriba por el
-polo o el cero de mayor frecuencia, $f_{max}$.
+La estrategia que seguiremos es:
+1. Diseñar analógicamente el sistema de control.
+2. Obtener el ancho de banda del sistema de control en lazo cerrado.
+3. Seleccionar el multiplicador que se usará entre el ancho de banda y la
+   frecuencia de muestreo. Debe ser mayor a 2. Usualmente la frecuencia de
+   muestreo es de 10 a 40 veces el ancho de banda.
+4. Obtener el periodo de muestreo a partir de la frecuencia de muestreo.
+3. Convertir el controlador analógico a digital utilizando el periodo de
+   muestreo obtenido.
 
 El siguiente video presenta algunas problemáticas que hay que considerar a la
 hora de seleccionar $h$.
@@ -95,150 +107,150 @@ hora de seleccionar $h$.
 
 ### Ejemplo
 
-Basado en el modelo [DC Motor Speed: System Modeling](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling)
+Es importante notar, que para este ejemplo, no consideramos todo el sistema de
+control, sino solamente una función de transferencia. Un sistema de control en
+lazo cerrado usualmente incrementa el ancho de banda.
 
-$$H(s) = \frac{2}{s^2 + 12 s + 20}$$
+Para el siguiente ejemplo, utilizamos la función de transferencia publicada en
+[DC Motor Speed: System
+Modeling](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling), la cual expresamos como
 
-$$H(s) = \frac{2}{(s+10) (s+2)}$$
+$$H(s) = \frac{2}{s^2 + 12 s + 20}. \tag{11}$$
 
-$$s+\omega_{max} = s+10$$
+El ancho de banda del sistema se obtuvo por medio de Matlab y el resultado es
 
-$$\omega_{max}= 10$$
+$$B = 0.306 \;\mathrm{Hz} \tag{12}$$
 
-$$f_{max} = \frac{\omega_{max}}{2\pi} = \frac{10}{2\pi} = 1.59\;\mathrm{Hz}$$
+En el siguiente paso seleccionamos el multiplicador para la frecuencia de muestreo, que para este ejemplo seleccionamos 10. Entonces tenemos que la frecuencia de muestreo es
 
-$$f_s > 2 (1.59\;\mathrm{Hz})$$
+$$f_s = 10 B. \tag{13}$$
 
-$$f_s = 4\;\mathrm{Hz}$$
+Combinando las ecuaciones (12) y (l3), nos da como resultado la frecuencia de muestreo
 
-$$h = 0.25\;\mathrm{s}$$
+$$f_s = 3.06 \;\mathrm{Hz}. \tag{14}$$
 
+Finalmente, el periodo de muestreo es
 
+$$h = 3.268\;\mathrm{s}. tag{15}$$
+
+El siguiente *script* de matlab se puede usar para obtener el periodo de muestreo.
+
+~~~
+s = tf('s');
+
+H = 2/(s^2+12*s+20);
+
+B = bandwidth(H)/2/pi; % Hay que recordar que está en rad/s y
+                       % necesitamos Hz
+
+f_s = 10*B;
+
+h = 1/f_s
+~~~
+
+El resultado obtenido es el mismo.
 
 ## Ejemplos
 
+A continuación, veremos dos ejemplos de como se aplica la transformación bilineal.
+Para obtener la función discreta, utilizaremos la siguiente expresión de sustitución
+
+$$H_d(z)\approx \left.H(s)\right|_{s=\frac{2}{h}\frac{z-1}{z+1}}. \tag{16}$$
+
+donde $H_d(s)$ representa la función de transferencia discreta.
 ### Primer orden
 
-$$H(s) = \frac{1}{s+1}$$
+Para el siguiente ejemplo, utilizamos la función de transferencia del subsistema
+eléctrico de un motor de CD, obtenida a partir de la información publicada en [DC
+Motor Speed: System
+Modeling](https://ctms.engin.umich.edu/CTMS/index.php?example=MotorSpeed&section=SystemModeling).
+La función de transferencia es
 
-$$H_d(z) = \left.\frac{1}{s+1}\right|_{z=\frac{2}{h}\frac{z-1}{z+1}}$$
+$$H(s) = \frac{2}{s + 20}. \tag{17}$$
 
-$$H_d(z) = \frac{1}{\frac{2}{h}\frac{z-1}{z+1}+1}$$
+Obtuvimos el ancho de banda de $H(s)$ por medio de Matlab y nuevamente
+utilizamos un multiplicador de 10, con lo que obtenemos el periodo de muestreo
 
-$$H_d(z) = \frac{1}{\frac{2}{h}\frac{z-1}{z+1}+1} \; \frac{z+1}{z+1} \;\frac{h}{h}$$
+$$h = 0.0315 \;\mathrm{s}. \tag{17}$$
 
-$$H_d(z) = \frac{h (z+1)}{2 (z-1) + h (z+1)}$$
+Utilizamos la ecuación (16) para expresar la función de transferencia (17) de
+forma discreta,
 
-$$H_d(z) = \frac{hz+h}{(2+h)z - (2-h)}$$
+$$H_d(z) = \left.\frac{2}{s+20}\right|_{s=\frac{2}{h}\frac{z-1}{z+1}}. \tag{18}$$
 
-$$H_d(z) = \frac{hz+h}{(2+h)z - (2-h)} \; \frac{\frac{1}{2+h}}{\frac{1}{2+h}}$$
+Aplicamos la sustitución y obtenemos
 
-$$H_d(z) = \frac{\frac{h}{2+h}z+\frac{h}{2+h}}{z - \frac{2-h}{2+h}}$$
+$$H_d(z) = \frac{2}{\frac{2}{h}\frac{z-1}{z+1}+20}. \tag{19}$$
 
-$h = 0.4$
+Finalmente, simplificamos la ecuación (19) y llegamos al resultado
 
-$$H_d(z) = \frac{\frac{1}{3}z+\frac{1}{3}}{z - \frac{1}{3}}$$
+$$H_d(z) = \frac{0.02395 z + 0.02395}{z - 0.521}. \tag{20}$$
 
+El siguiente *script* de Matlab puede realizar ese cálculo.
 
 ```
->> s=tf('s')
+s = tf('s');
 
-s =
- 
-  s
- 
-Continuous-time transfer function.
+H = 2/(s+20);
 
->> H = 1/(s+1)
+B = bandwidth(H)/2/pi;
 
-H =
- 
-    1
-  -----
-  s + 1
- 
-Continuous-time transfer function.
+f_s = 10*B;
 
->> c2d(H, 0.4, 'tustin')
+h = 1/f_s;
 
-ans =
- 
-  0.1667 z + 0.1667
-  -----------------
-     z - 0.6667
- 
-Sample time: 0.4 seconds
-Discrete-time transfer function.
+H_d = c2d(H,h,'tustin')
 ```
 
 ### Segundo orden
 
-$$H(s) = \frac{s+2}{s^2+2s+1}$$
+Para el siguiente ejemplo, utilizamos nuevamente la función de transferencia (11),
 
-$$H_d(z) = \left.\frac{s+2}{s^2+2s+1}\right|_{z=\frac{2}{h}\frac{z-1}{z+1}}$$
+$$H(s) = \frac{2}{s^2 + 12 s + 20}$$
 
-$$H_d(z) = \frac{\frac{2}{h}\frac{z-1}{z+1}+2}{\left(\frac{2}{h}\frac{z-1}{z+1}\right)^2+2(\frac{2}{h}\frac{z-1}{z+1})+1}$$
+y el periodo de muestreo que calculamos en la ecuación (15)
 
-$$H_d(z) = \frac{\frac{2}{h}\frac{z-1}{z+1}+2}{\left(\frac{2}{h}\frac{z-1}{z+1}\right)^2+2(\frac{2}{h}\frac{z-1}{z+1})+1} \frac{h^2}{h^2} \frac{(z+1)^2}{(z+1)^2}$$
+$$h = 0.3268\;\mathrm{s}.$$
 
-$$H_d(z) = \frac{2h (z-1)(z+1) + 2}{2(z-1)^2 + 4 h (z-1)(z+1) + h^2 (z+1)^2 }$$
+Utilizamos la ecuación (16) para expresar la función de transferencia (11) de
+forma discreta,
 
-$$H_d(z) = \frac{2h z^2 - 2h + 2}{2z^2 - 4z +2 + 4hz^2-4h + h^2z^2 +2h^2z+h^2}$$
+$$H_d(z) = \left.\frac{2}{s^2 + 12 s + 20}\right|_{z=\frac{2}{h}\frac{z-1}{z+1}}. \tag{21}$$
 
-$$H_d(z) = \frac{2h z^2 + (2 - 2h)}{(2+4h+h^2)z^2 - (4+2h^2)z + (2-4h+h^2)}$$
+Al realizar la sustitución, obtenemos la expresión
 
-$$H_d(z) = \frac{2h z^2 + (2 - 2h)}{(2+4h+h^2)z^2 - (4+2h^2)z + (2-4h+h^2)}
-\frac{\frac{1}{2+4h+h^2}}{\frac{1}{2+4h+h^2}}$$
+$$H_d(z) = \frac{2}{\left(\frac{2}{h}\frac{z-1}{z+1}\right)^2+12(\frac{2}{h}\frac{z-1}{z+1})+20} \tag{22}$$
 
-$h = 0.2$
+Simplificando la ecuación (22), obtenemos el resultado final
 
-$$H(s) = \frac{0.3871 z - 0.2581}{z - 0.9355}$$
+$$H_d(z) = \frac{0.01528 z^2 + 0.03056 z + 0.01528}{z^2 - 0.2667 z - 0.1221}. \tag{23}$$
+
+Este resultado también se puede obtener por medio del siguiente *script*.
+
 
 ```
->> s=tf('s')
+s = tf('s');
 
-s =
- 
-  s
- 
-Continuous-time transfer function.
+H = 2/(s^2 + 12*s + 20);
 
->> H = (s+2)/(s+2*s+1)
+B = bandwidth(H)/2/pi;
 
-H =
- 
-   s + 2
-  -------
-  3 s + 1
- 
-Continuous-time transfer function.
+f_s = 10*B;
 
->> c2d(H, 0.2, 'tustin')
+h = 1/f_s;
 
-ans =
- 
-  0.3871 z - 0.2581
-  -----------------
-     z - 0.9355
- 
-Sample time: 0.2 seconds
-Discrete-time transfer function.
+H_d = c2d(H,h,'tustin')
 ```
-
-## Ejercicio
-
-Se recomienda como ejercicio el caso de tercer orden:
-
-$$H(s) = \frac{2}{s^3+2s^2+s+1}$$
-
 ## Para saber más
 
-* Se basan en el [método de Euler de integración](https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler)
+En el enlace [método de Euler de
+integración](https://es.wikipedia.org/wiki/M%C3%A9todo_de_Euler) podemos revisar otros
+métodos de integración que se usan para obtener aproximaciones.
 
-Sobre diferentes aproximaciones que utiliza Matlab
+En el siguiente video podemos ver diferentes aproximaciones que utiliza Matlab.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rL_1oWrOplk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Sobre otro enfoque para obtener la transformación bilineal:
+En el siguiente video podemos ver otro enfoque para obtener la transformación bilineal.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/88tWmyBaKIQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
