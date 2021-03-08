@@ -30,7 +30,7 @@ $[t,t+h]$. Para ello, partimos del [segundo teorema fundamental del
 cálculo](https://es.wikipedia.org/wiki/Teorema_fundamental_del_c%C3%A1lculo#Segundo_Teorema_Fundamental_del_C%C3%A1lculo),
 que se muestra a continuación
 
-$$\int_{t}^{t+h} f'(\tau) \mathrm{d}\tau = f(t+h) - f(t) \tag{1}$$
+$$\int_{t}^{t+h} f'(\tau) \mathrm{d}\tau = f(t+h) - f(t)$$
 
 Una forma de aproximar este resultado es utilizando la regla del trapecio, como
 se puede apreciar en la siguiente figura.
