@@ -70,7 +70,7 @@ En el siguiente video podemos ver como se implementaba electromecánicamente una
 interfaz asíncrona serial. Como ya mencionamos, los teletipos fueron unos de los
 precursores de la comunicación asíncrona serial.
 
-<iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x4971bc" width="75%" height="75%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen > </iframe>
+<iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x4971bc" width="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen > </iframe>
 
 
 ## Interfaz de periféricos serie
