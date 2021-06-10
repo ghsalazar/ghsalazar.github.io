@@ -3,6 +3,8 @@ title:      Interfaces de comunicación serial de la Raspberry Pi
 author:     Gastón Hugo Salazar Silva
 date:       2021-06-08
 tags:       DSP, raspberry-pi
+layout:     post
+lang:       es
 usemathjax: true
 ...
 
