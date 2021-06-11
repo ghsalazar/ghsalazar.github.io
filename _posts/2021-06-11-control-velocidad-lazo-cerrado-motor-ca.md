@@ -43,8 +43,9 @@ etapa del controlador a causa del
 [deslizamiento](https://es.wikipedia.org/wiki/Deslizamiento_(m%C3%A1quinas_el%C3%A9ctricas))
 del motor de CA. Si la respuesta del controlador es superior al deslizamiento
 admisible por el motor, este puede causar fluctuaciones en la corriente que
-podrían causar un malfuncionamiento. Para evitar esto, aplicamos un limitador de
-velocidad, a la salida de control. El limitador se puede implementar como una saturación
+podrían causar un malfuncionamiento. Para evitar esto, aplicamos un [limitador
+de velocidad](https://es.mathworks.com/help/simulink/slref/ratelimiter.html), a
+la salida de control. El limitador se puede implementar como una saturación
 
 | (3) | $$\Delta\omega =\left\{\begin{matrix} max, &\Delta\omega > max \\ u,   &min \leq \Delta\omega \leq max \\ min, &\Delta\omega < min. \end{matrix}\right.$$ |
 
