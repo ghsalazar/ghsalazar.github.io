@@ -12,7 +12,7 @@ un motor de corriente alterna. Esto se debe a que el motor de corriente alterna
 tienen una muy buena regulación de velocidad por que tienen incorporados una
 retroalimentación con respecto a la velocidad.
 
-Sin embargo, en ocasiones se requiere un mejor control de la velocidad; por
+Sin embargo, en ocasiones requierimos de un mejor control de la velocidad; por
 ejemplo, en aplicaciones donde la tensión de una cinta de material se debe
 regular. Para esto, requerimos un control en lazo cerrado.
 
@@ -25,9 +25,9 @@ lazo cerrado para motores de corriente alterna.
 
 | <img src="http:/assets/figures/control-velocidad-lazo-cerrado-motor-ca-1.svg" width="100%"> |
 |:---:|
-| **Figura**. Sistema de control de velocidad en lazo cerrado para un motor de CA. La variable $\omega$ es la velocidad en el rotor y $\omega^r$ es la referencia que se debe seguir. |
+| **Figura 1**. Sistema de control de velocidad en lazo cerrado para un motor de CA. La variable $\omega$ es la velocidad en el rotor y $\omega^r$ es la referencia que se debe seguir. |
 
-En la **figura** podemos un sistema de control de velocidad en lazo cerrado para un motor de CA, donde la variable $\omega$ es la velocidad en el rotor, $\omega^r$ es la referencia que se debe seguir, el error $e$ se define por medio de la ecuación
+En la figura 1, podemos un sistema de control de velocidad en lazo cerrado para un motor de CA, donde la variable $\omega$ es la velocidad en el rotor, $\omega^r$ es la referencia que se debe seguir, el error $e$ se define por medio de la ecuación
 
 | (1) | $$e = \omega - \omega^r$$. |
 
@@ -56,7 +56,6 @@ motor.
 Dependiendo el tipo de motor, normalmente tendremos un inversor bifásico o un [inversor
 trifásico](https://ghsalazar.github.io/electrical%20machines%20control/inverters/2020/03/24/three-phase-inverters.html). 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DJWWWUmJ4pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Conclusiones
 
@@ -68,3 +67,10 @@ Sin embargo, es normalmente suficiente el uso el control en lazo abierto de
 un motor de corriente alterna. Esto se debe a que el motor de corriente alterna
 tienen una muy buena regulación de velocidad por que tienen incorporados una
 retroalimentación con respecto a la velocidad.
+
+## Para saber más
+
+En el siguiente video, podemos ver otra perspectiva sobre el control en lazo
+cerrado de motores de CA.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DJWWWUmJ4pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
