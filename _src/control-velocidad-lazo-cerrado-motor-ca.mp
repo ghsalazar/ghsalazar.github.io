@@ -12,24 +12,30 @@ picture picLimiter;
 
 picLimiter := nullpicture;
 
-addto picLimiter doublepath (0,0)--(2mm,0)--(4mm,4mm)--(6mm,4mm) withpen pencircle scaled 1bp;
+addto picLimiter doublepath (-2mm,0)--(2mm,0) withpen pencircle scaled 0.25bp;
+addto picLimiter doublepath (0,-2mm)--(0,2mm) withpen pencircle scaled 0.25bp;
+addto picLimiter doublepath (-2mm,-2mm)--(2mm,2mm) withpen pencircle scaled 1bp;
 
 %% Feedforward
 
 pair reference;
 circleit.suma1(btex $+$ etex);
+pair error;
 boxit.control("Controlador");
+pair deltaW;
 boxit.limitador(picLimiter);
 circleit.suma2(btex $+$ etex);
-boxit.driver("VFD");
+boxit.driver("Inversor");
 boxit.motor("Motor");
 pair nodeff[];
 pair output;
 
 suma1.w - reference = (7mm,0);
-control.w - suma1.e = (7mm,0);
+error - suma1.e = (7mm,0);
+control.w - error = (7mm,0);
 limitador.w - control.e = (7mm,0);
-suma2.w - limitador.e = (7mm,0);
+deltaW - limitador.e = (7mm,0);
+suma2.w - deltaW = (7mm,0);
 driver.w - suma2.e = (7mm,0);
 motor.w - driver.e = (7mm,0);
 nodeff1 - motor.e = (7mm,0);
@@ -37,8 +43,11 @@ output - nodeff1 = (7mm,0);
 
 drawboxed(suma1,control,limitador,suma2,driver,motor);
 label.lft(btex $\omega^r$ etex, reference);
-label.rt(btex $\omega$ etex, output);
+label.top(btex $e$ etex, error);
 label.bot("Limitador", limitador.s);
+label.top(btex $\Delta\omega$ etex, deltaW);
+label.rt(btex $\omega$ etex, output);
+
 
 drawarrow reference--suma1.w;
 drawarrow suma1.e--control.w;
