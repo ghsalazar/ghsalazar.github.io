@@ -1,11 +1,25 @@
 ---
-title: Control de velocidad en lazo cerrado para un motor de CA
-author: Gastón Salazar
-date:   2021-06-09
+title:  Control de velocidad en lazo cerrado para un motor de CA
+author: Gastón Hugo Salazar Silva
+date:   2021-06-11
 tags:   motor-ca, control-velocidad
 layout: post
 lang:   es
 ...
+
+Para la mayoría de las aplicaciones, es suficiente el control en lazo abierto de
+un motor de corriente alterna. Esto se debe a que el motor de corriente alterna
+tienen una muy buena regulación de velocidad por que tienen incorporados una
+retroalimentación con respecto a la velocidad.
+
+Sin embargo, en ocasiones se requiere un mejor control de la velocidad; por
+ejemplo, en aplicaciones donde la tensión de una cinta de material se debe
+regular. Para esto, requerimos un control en lazo cerrado.
+
+En el siguiente video, podemos ver una aplicación del control de velocidad en
+lazo cerrado para motores de corriente alterna.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cb3n70drPZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Sistema de control
 
@@ -34,9 +48,23 @@ velocidad, a la salida de control. El limitador se puede implementar como una sa
 
 | (3) | $$\Delta\omega =\left\{\begin{matrix} max, &\Delta\omega > max \\ u,   &min \leq \Delta\omega \leq max \\ min, &\Delta\omega < min. \end{matrix}\right.$$ |
 
-Finalmente, esta cambio en la velocidad angular no se puede aplicar directamente
+Finalmente, este cambio en la velocidad angular no se puede aplicar directamente
 al inversor, sino que debemos sumarle la velocidad angular del motor. Esto nos
-dará el valor de frecuencia requerida por  
+dará el valor de velocidad angular requerida para que el inversor lo aplique al
+motor.
+
+Dependiendo el tipo de motor, normalmente tendremos un inversor bifásico o un [inversor
+trifásico](https://ghsalazar.github.io/electrical%20machines%20control/inverters/2020/03/24/three-phase-inverters.html). 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DJWWWUmJ4pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Conclusiones
+
+Un sistema de control de velocidad en lazo cerrado para motores de CA se utiliza
+en aplicaciones que requieren un margen de error muy pequeño; por ejemplo, en
+aplicaciones donde la tensión de una cinta de material se debe regular.
+
+Sin embargo, es normalmente suficiente el uso el control en lazo abierto de
+un motor de corriente alterna. Esto se debe a que el motor de corriente alterna
+tienen una muy buena regulación de velocidad por que tienen incorporados una
+retroalimentación con respecto a la velocidad.
