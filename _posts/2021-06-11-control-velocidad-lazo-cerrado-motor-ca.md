@@ -23,7 +23,7 @@ lazo cerrado para motores de corriente alterna.
 
 ## Sistema de control
 
-| <img src="http:assets/figures/control-velocidad-lazo-cerrado-motor-ca-1.svg" width="100%"> |
+| <img src="assets/figures/control-velocidad-lazo-cerrado-motor-ca-1.svg" width="100%"> |
 |:---:|
 | **Figura 1**. Sistema de control de velocidad en lazo cerrado para un motor de CA. La variable $\omega$ es la velocidad en el rotor y $\omega^r$ es la referencia que se debe seguir. |
 
