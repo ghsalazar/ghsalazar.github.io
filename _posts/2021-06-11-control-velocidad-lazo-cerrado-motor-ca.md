@@ -12,7 +12,7 @@ un motor de corriente alterna. Esto se debe a que el motor de corriente alterna
 tienen una muy buena regulación de velocidad por que tienen incorporados una
 retroalimentación con respecto a la velocidad.
 
-Sin embargo, en ocasiones requierimos de un mejor control de la velocidad; por
+Sin embargo, en ocasiones requerimos de un mejor control de la velocidad; por
 ejemplo, en aplicaciones donde la tensión de una cinta de material se debe
 regular. Para esto, requerimos un control en lazo cerrado.
 
