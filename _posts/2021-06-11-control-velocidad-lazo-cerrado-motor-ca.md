@@ -27,7 +27,10 @@ lazo cerrado para motores de corriente alterna.
 |:---:|
 | **Figura 1**. Sistema de control de velocidad en lazo cerrado para un motor de CA. La variable $\omega$ es la velocidad en el rotor y $\omega^r$ es la referencia que se debe seguir. |
 
-En la figura 1, podemos un sistema de control de velocidad en lazo cerrado para un motor de CA, donde la variable $\omega$ es la velocidad en el rotor, $\omega^r$ es la referencia que se debe seguir, el error $e$ se define por medio de la ecuación
+En la figura 1, podemos un sistema de control de velocidad en lazo cerrado para
+un motor de CA, donde la variable $\omega$ es la velocidad en el rotor,
+$\omega^r$ es la referencia que se debe seguir, el error $e$ se define por medio
+de la ecuación
 
 | (1) | $$e = \omega - \omega^r$$. |
 
@@ -54,9 +57,33 @@ al inversor, sino que debemos sumarle la velocidad angular del motor. Esto nos
 dará el valor de velocidad angular requerida para que el inversor lo aplique al
 motor.
 
-Dependiendo el tipo de motor, normalmente tendremos un inversor bifásico o un [inversor
-trifásico](https://ghsalazar.github.io/electrical%20machines%20control/inverters/2020/03/24/three-phase-inverters.html). 
+Dependiendo el tipo de motor, normalmente tendremos un [inversor
+bifásico](https://www.roboticstomorrow.com/article/2017/07/forms-of-closed-loop-stepper-control/10398)
+o un [inversor
+trifásico](https://ghsalazar.github.io/electrical%20machines%20control/inverters/2020/03/24/three-phase-inverters.html).
 
+
+
+## Sistema de control "*sensorless"
+
+Una tipo específico de sistema de control en lazo cerrado que luego se le dice
+"sin sensor" o *sensorless*. En realidad, sí existen sensores, pero no mide
+directmente la velocidad.
+
+Este tipo de sistema de control se utiliza sobre todo para motores sin
+escobillas o, incluso, para motores a pasos. Por medio de los propios devanados
+del motor, se mide el paso de los dientes del rotor. Esto produce una fuerza
+contralectromotriz sobre los devanados, la cual dependerá del ángulo del diente
+con respecto al devanado y la velocidad con la que cruza el diente.
+
+En resumen, en un sistema *sensorless* medimos indirectamente la velocidad por
+medio de las variaciones en la fuerza contraelectromotriz que existen en los
+devanados del estator.  
+
+Una ventaja de este sistema de control es que no se requiere más sensores, sino
+que se aprovecha la información obtenida del porpio motor. Una desventaja es que
+requiere de más procesamiento de información. Además, para bajas velocidades no
+es muy útil el sistema.
 
 ## Conclusiones
 
@@ -75,3 +102,8 @@ En el siguiente video, podemos ver otra perspectiva sobre el control en lazo
 cerrado de motores de CA.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DJWWWUmJ4pQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Otro tipo de motor de corriente alterna es el [motor sin escobillas](https://es.wikipedia.org/wiki/Motor_el%C3%A9ctrico_sin_escobillas). Este tipo de motor es un motor síncrono de corriente alterna, aunque luego se dice que es de "corriente directa". En el siguiente video, podemos ver un esquema de control para ese tipo de motor.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ZemeZMgYvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
