@@ -11,7 +11,6 @@ permalink: /projects/
 
 ## Projects in maintenance mode
 
-* [Agents.js](maintenance mode).
+* [Agents.js](https://github.com/ghsalazar/agentes).
 * [Mdweb](https://github.com/ghsalazar/mdweb): A set of command-line tools for
   literate programming in markdown.
-  
