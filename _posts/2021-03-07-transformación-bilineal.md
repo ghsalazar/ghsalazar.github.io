@@ -131,7 +131,7 @@ $$f_s = 3.06 \;\mathrm{Hz}. \tag{14}$$
 
 Finalmente, el periodo de muestreo es
 
-$$h = 3.268\;\mathrm{s}. \tag{15}$$
+$$h = 0.3268\;\mathrm{s}. \tag{15}$$
 
 El siguiente *script* de matlab se puede usar para obtener el periodo de muestreo.
 
