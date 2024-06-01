@@ -18,17 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Gastón's writings, works and musings
+title: La libreta de Gastón
 author: Gastón H. Salazar-Silva
 email: gaston_salazar@yahoo.com
 description: >- # this means to ignore newlines until "baseurl:"
-  In this place, I write about Mechatronics, Cybernetics, Control of Electrical Machines,
-  Embedded Systems, Digital Signal Processing, etc.
-
+	Aquí escribo de todo y sobre todo
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-twitter_username: gaston_salazar
 github_username:  ghsalazar
 linkedin_username: ghsalazar
 
