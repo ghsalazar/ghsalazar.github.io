@@ -28,7 +28,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 github_username:  ghsalazar
 linkedin_username: ghsalazar
-mastodon: mastodon.world/@ghsalazar
+mastodon:
+    instance: mastodon.world
+    username: ghsalazar
 
 # Build settings
 theme: minima
